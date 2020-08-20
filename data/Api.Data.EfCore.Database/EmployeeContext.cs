@@ -29,7 +29,6 @@ namespace Api.Data.EfCore.Database
             base.OnModelCreating(modelBuilder);
         }
 
-
         public override int SaveChanges()
         {
             SetShadowProperties();
