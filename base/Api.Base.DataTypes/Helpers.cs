@@ -32,5 +32,10 @@
                 ? pageSettings.DefaultPageSize
                 : 100;
         }
+
+        public static string GetErrorType(this ErrorCodeEnum errorCodeEnum)
+        {
+            return $"{(int)errorCodeEnum}";
+        }
     }
 }

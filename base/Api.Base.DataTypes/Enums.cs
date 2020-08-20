@@ -1,4 +1,4 @@
-﻿namespace Api.Base.Web
+﻿namespace Api.Base.DataTypes
 {
     public enum ResponseCode
     {

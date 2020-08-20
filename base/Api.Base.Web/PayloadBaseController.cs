@@ -1,4 +1,5 @@
-﻿using Api.Base.DataTypes.Responses;
+﻿using Api.Base.DataTypes;
+using Api.Base.DataTypes.Responses;
 using Api.Base.Web.Exceptions;
 using Api.Base.Web.Responses;
 using Microsoft.AspNetCore.Mvc;

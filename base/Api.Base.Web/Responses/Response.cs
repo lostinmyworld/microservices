@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Api.Base.DataTypes;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Runtime.Serialization;
 

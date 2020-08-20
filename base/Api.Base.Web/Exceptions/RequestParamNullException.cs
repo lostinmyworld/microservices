@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Api.Base.DataTypes;
+using System;
 using System.Net;
 
 namespace Api.Base.Web.Exceptions
