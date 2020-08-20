@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Api.Data.EfCore.Database\Api.Data.EfCore.Database.csproj" />
+  </ItemGroup>
+
 </Project>
