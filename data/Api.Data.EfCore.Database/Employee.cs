@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Api.Data.EfCore.Database
 {
     [Table("Employee")]
-    public class Employee : TEntity
+    public class Employee : BaseEntity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
