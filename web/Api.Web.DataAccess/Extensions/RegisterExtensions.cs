@@ -9,9 +9,8 @@ namespace Api.Web.DataAccess.Extensions
     {
         internal static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContextPool<EmployeeContext>(options => options
-                .EnableSensitiveDataLogging()
-                .UseSqlServer(configuration.GetConnectionString("EmployeeDb")));
+            services.AddDbContextPool<EmployeeContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("EmployeeDb")));
 
             return services;
         }
