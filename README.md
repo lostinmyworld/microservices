@@ -10,12 +10,13 @@ Implementing the web API with the following principles/patterns:
 * Repository pattern
 * Dependency Injection & Inversion of Control
 * Async Tasks pattern
-* Logging (including requests/responses
+* Logging (including requests/responses)
 * Global exception handling
 * ProblemDetails guidelines for human readable errors https://tools.ietf.org/html/rfc7807
+* IOptions pattern to use appSettings.json configurations with DI
 
 Technologies used:
-* .NET Core 3.1
+* .NET Core 3.1 with C# 8.0
 * Entity Framework Core
 * Code-First MSSQL database
 * JWT (JSON Web Token) Bearer Token
