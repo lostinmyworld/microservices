@@ -22,6 +22,7 @@ namespace Api.Web.DataAccess
             services.AddDatabase(_configuration)
                 .AddServices()
                 .AddConfigOptions(_configuration)
+                .AddDocumentation()
                 .AddControllers();
         }
 
@@ -45,6 +46,8 @@ namespace Api.Web.DataAccess
             {
                 endpoints.MapControllers();
             });
+
+            app.UseDocumentation();
         }
     }
 }

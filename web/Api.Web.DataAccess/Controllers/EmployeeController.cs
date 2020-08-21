@@ -1,5 +1,4 @@
 ﻿using Api.Base.Web.Controllers;
-using Api.Data.Access.DataTypes.Requests;
 using Api.Data.Access.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -26,9 +25,9 @@ namespace Api.Web.DataAccess.Controllers
         }
 
         [HttpGet("name/{name}")]
-        public async Task<IActionResult> RetrieveByNameAsync([FromRoute] NameRequest request)
+        public async Task<IActionResult> RetrieveByNameAsync(string name)
         {
-            var result = await _service.GetByNameAsync(request).ConfigureAwait(false);
+            var result = await _service.GetByNameAsync(name).ConfigureAwait(false);
 
             return RetrievePayload(result);
         }
