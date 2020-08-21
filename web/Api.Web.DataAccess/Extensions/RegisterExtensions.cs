@@ -32,5 +32,17 @@ namespace Api.Web.DataAccess.Extensions
 
             return services;
         }
+
+        internal static IServiceCollection AddMvcForJsonXml(this IServiceCollection services)
+        {
+            services.AddMvc(options => options.RespectBrowserAcceptHeader = true)
+                .AddXmlDataContractSerializerFormatters()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.IgnoreNullValues = true;
+                });
+
+            return services;
+        }
     }
 }
