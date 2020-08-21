@@ -1,4 +1,5 @@
 using Api.Web.DataAccess.Extensions;
+using Api.Web.DataAccess.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,10 +27,13 @@ namespace Api.Web.DataAccess
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            app.UseMiddleware<AuditMiddleware>();
+            if (!env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseHsts();
             }
+
+            app.UseGlobalExceptionHandler();
 
             app.UseHttpsRedirection();
 
