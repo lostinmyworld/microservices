@@ -16,7 +16,7 @@ Implementing the web API with the following principles/patterns:
 * IOptions pattern to use appSettings.json configurations with DI
 
 Technologies used:
-* .NET Core 3.1
+* .NET Core 3.1 with C# 8.0
 * Entity Framework Core
 * Code-First MSSQL database
 * JWT (JSON Web Token) Bearer Token
