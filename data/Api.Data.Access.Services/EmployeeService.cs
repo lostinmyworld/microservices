@@ -20,28 +20,9 @@ namespace Api.Data.Access.Services
             _mapper = mapper;
         }
 
-        #region Retrieve All
-        public List<EmployeeDTO> GetAll()
-        {
-            var dbEntities = _employeeRepo.GetAll();
-
-            return _mapper.Map<List<EmployeeDTO>>(dbEntities);
-        }
-
         public async Task<List<EmployeeDTO>> GetAllAsync()
         {
             var dbEntities = await _employeeRepo.GetAllAsync().ConfigureAwait(false);
-
-            return _mapper.Map<List<EmployeeDTO>>(dbEntities);
-        }
-        #endregion
-
-        #region Retrieve by Name
-        public List<EmployeeDTO> GetByName(NameRequest request)
-        {
-            request.Validate();
-
-            var dbEntities = _employeeRepo.GetByName(request.Name);
 
             return _mapper.Map<List<EmployeeDTO>>(dbEntities);
         }
@@ -54,6 +35,5 @@ namespace Api.Data.Access.Services
 
             return _mapper.Map<List<EmployeeDTO>>(dbEntities);
         }
-        #endregion
     }
 }

@@ -7,10 +7,7 @@ namespace Api.Data.Access.Interfaces
 {
     public interface IEmployeeService
     {
-        List<EmployeeDTO> GetAll();
         Task<List<EmployeeDTO>> GetAllAsync();
-
-        List<EmployeeDTO> GetByName(NameRequest request);
         Task<List<EmployeeDTO>> GetByNameAsync(NameRequest request);
     }
 }
