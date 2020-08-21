@@ -9,7 +9,7 @@ Implementing the web API with the following principles/patterns:
 * SOA (Service Oriented Architecture)
 * Repository pattern
 * Dependency Injection & Inversion of Control
-* Async Tasks pattern
+* Task Asynchronous Pattern
 * Logging (including requests/responses)
 * Global exception handling
 * ProblemDetails guidelines for human readable errors https://tools.ietf.org/html/rfc7807
