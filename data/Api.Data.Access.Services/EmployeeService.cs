@@ -1,4 +1,5 @@
 ﻿using Api.Data.Access.DataTypes.DTOs;
+using Api.Data.Access.DataTypes.Requests;
 using Api.Data.Access.Interfaces;
 using Api.Data.EfCore.Repository;
 using AutoMapper;
@@ -32,16 +33,16 @@ namespace Api.Data.Access.Services
             return _mapper.Map<List<EmployeeDTO>>(dbEntities);
         }
 
-        public List<EmployeeDTO> GetByName(string name)
+        public List<EmployeeDTO> GetByName(NameRequest request)
         {
-            var dbEntities = _employeeRepo.GetByName(name);
+            var dbEntities = _employeeRepo.GetByName(request.Name);
 
             return _mapper.Map<List<EmployeeDTO>>(dbEntities);
         }
 
-        public async Task<List<EmployeeDTO>> GetByNameAsync(string name)
+        public async Task<List<EmployeeDTO>> GetByNameAsync(NameRequest request)
         {
-            var dbEntities = await _employeeRepo.GetByNameAsync(name).ConfigureAwait(false);
+            var dbEntities = await _employeeRepo.GetByNameAsync(request.Name).ConfigureAwait(false);
 
             return _mapper.Map<List<EmployeeDTO>>(dbEntities);
         }
