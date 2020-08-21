@@ -3,6 +3,7 @@ Web API project using .NET Core and best practices approach.
 
 Implementing the web API with the following principles/patterns:
 * Microservices architecture
+* REST architectural design, RESTful web API (CRUD operations through HTTP verbs)
 * SOLID principles
 * Clean Code
 * SOA (Service Oriented Architecture)
