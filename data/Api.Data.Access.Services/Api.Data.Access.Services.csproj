@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\base\Api.Base.Web\Api.Base.Web.csproj" />
     <ProjectReference Include="..\Api.Data.Access.Interfaces\Api.Data.Access.Interfaces.csproj" />
     <ProjectReference Include="..\Api.Data.EfCore.Repository\Api.Data.EfCore.Repository.csproj" />
   </ItemGroup>
