@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Api.Data.Access.DataTypes\Api.Data.Access.DataTypes.csproj" />
+  </ItemGroup>
+
 </Project>

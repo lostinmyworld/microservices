@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Api.Data.Access.Interfaces\Api.Data.Access.Interfaces.csproj" />
+    <ProjectReference Include="..\Api.Data.EfCore.Repository\Api.Data.EfCore.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
