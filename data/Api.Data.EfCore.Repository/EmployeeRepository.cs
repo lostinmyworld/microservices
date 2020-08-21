@@ -9,7 +9,7 @@ namespace Api.Data.EfCore.Repository
 {
     public class EmployeeRepository : GenericRepository<Employee>
     {
-        public EmployeeRepository(EmployeeContext context)
+        public EmployeeRepository(EntityContext context)
             : base(context)
         {
         }

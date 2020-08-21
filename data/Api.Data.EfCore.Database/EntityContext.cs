@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Api.Data.EfCore.Database
 {
-    public class EmployeeContext : DbContext
+    public class EntityContext : DbContext
     {
-        public EmployeeContext(DbContextOptions<EmployeeContext> options)
+        public EntityContext(DbContextOptions<EntityContext> options)
             : base(options)
         {
         }
@@ -24,7 +24,7 @@ namespace Api.Data.EfCore.Database
                 entity.AddProperty("UpdatedDate", typeof(DateTime));
             }
 
-            modelBuilder.Entity<Employee>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            modelBuilder.Entity<Employee>().Property(x => x.Id).UseIdentityColumn();
 
             base.OnModelCreating(modelBuilder);
         }

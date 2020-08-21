@@ -1,32 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Api.Data.EfCore.Repository.Base
 {
     public interface IDataRepository<T>
     {
-        #region Create
-        bool Add(T entity);
-        Task<bool> AddAsync(T entity);
-        #endregion
+        Task<bool> Add(T entity);
 
-        #region Read
-        List<T> GetAll();
-        Task<List<T>> GetAllAsync();
+        Task<List<T>> GetAll();
+        Task<T> Get(long id);
 
-        T Get(Guid id);
-        Task<T> GetAsync(Guid id);
-        #endregion
+        Task<bool> Update(long id, T updatedEntity);
 
-        #region Update
-        bool Update(T updatedEntity);
-        Task<bool> UpdateAsync(T updatedEntity);
-        #endregion
-
-        #region Delete
-        bool Delete(Guid id);
-        Task<bool> DeleteAsync(Guid id);
-        #endregion
+        Task<bool> Delete(long id);
     }
 }
