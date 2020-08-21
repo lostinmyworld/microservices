@@ -6,8 +6,8 @@ namespace Api.Data.Access.DataTypes.DTOs
     [DataContract]
     public class EmployeeDTO
     {
-        public Guid Id { get; set; }
-
+        [DataMember]
+        public long Id { get; set; }
         [DataMember]
         public string FirstName { get; set; }
         [DataMember]

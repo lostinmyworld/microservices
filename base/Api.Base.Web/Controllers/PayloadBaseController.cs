@@ -12,25 +12,21 @@ namespace Api.Base.Web.Controllers
     {
         #region Retrieve payloads
         protected IActionResult RetrievePayload<T>(Response<PagedResult<T>> response)
-            where T : class
         {
             return Ok(response);
         }
 
         protected IActionResult RetrievePayload<T>(Response<T> response)
-            where T : class
         {
             return Ok(response);
         }
 
         protected IActionResult RetrievePayload<T>(PagedResult<T> response)
-            where T : class
         {
             return Ok(ToResponseObject(response));
         }
 
         protected IActionResult RetrievePayload<T>(T response)
-            where T : class
         {
             return Ok(ToResponseObject(response));
         }
@@ -46,7 +42,7 @@ namespace Api.Base.Web.Controllers
 
         private ResponseCode RetrieveCode<T>(T payload)
         {
-            return payload.Equals(default(T)) ? ResponseCode.Invalid : ResponseCode.Valid;
+            return payload == null || payload.Equals(default(T)) ? ResponseCode.Invalid : ResponseCode.Valid;
         }
         #endregion
 

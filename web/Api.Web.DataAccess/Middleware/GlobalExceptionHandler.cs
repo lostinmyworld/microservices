@@ -18,24 +18,24 @@ namespace Api.Web.DataAccess.Middleware
 
         internal static void UseGlobalExceptionHandler(this IApplicationBuilder app)
         {
-            app.UseExceptionHandler(a =>
-                a.Run(async context =>
-                {
-                    var feature = context.Features.Get<IExceptionHandlerPathFeature>();
+            _ = app.UseExceptionHandler(a =>
+                  a.Run(async context =>
+                  {
+                      var feature = context.Features.Get<IExceptionHandlerPathFeature>();
 
-                    var problemDetails = feature.Error.Demystify();
+                      var problemDetails = feature.Error.Demystify();
 
-                    context.Response.StatusCode = problemDetails.Status.Value;
+                      context.Response.StatusCode = problemDetails.Status.Value;
 
-                    var response = new Response<string>
-                    {
-                        ResponseKey = _responseKey,
-                        ResponseCode = ResponseCode.Invalid,
-                        ProblemDetails = problemDetails
-                    };
+                      var response = new Response<string>
+                      {
+                          ResponseKey = _responseKey,
+                          ResponseCode = ResponseCode.Invalid,
+                          ProblemDetails = problemDetails
+                      };
 
-                    context.Response.WriteJson(response, "application/json");
-                }));
+                      context.Response.WriteJson(response, "application/json");
+                  }));
         }
 
         private static ProblemDetails Demystify(this Exception exception)

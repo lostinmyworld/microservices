@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{422FEE78-7F0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{98E91794-42A9-447C-A218-F861548ABAFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Web.DataAccess", "web\Api.Web.DataAccess\Api.Web.DataAccess.csproj", "{BED8330B-2D01-4AFD-A3FD-5F35430F07EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Web.DataAccess", "web\Api.Web.DataAccess\Api.Web.DataAccess.csproj", "{BED8330B-2D01-4AFD-A3FD-5F35430F07EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "base", "base", "{16E1069C-16D1-42F9-91E1-ACE937A34BA8}"
 EndProject
@@ -17,19 +17,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "efcore", "efcore", "{57EB2D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "access", "access", "{87FA5FB8-717C-40DF-AE97-1FFBE0A9B5B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Base.DataTypes", "base\Api.Base.DataTypes\Api.Base.DataTypes.csproj", "{1D632CB2-9133-4142-B1F9-DA83D27F0096}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Base.DataTypes", "base\Api.Base.DataTypes\Api.Base.DataTypes.csproj", "{1D632CB2-9133-4142-B1F9-DA83D27F0096}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Base.Web", "base\Api.Base.Web\Api.Base.Web.csproj", "{C809D96E-FFBD-4A9E-B8B8-6C2581B549A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Base.Web", "base\Api.Base.Web\Api.Base.Web.csproj", "{C809D96E-FFBD-4A9E-B8B8-6C2581B549A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data.EfCore.Database", "data\Api.Data.EfCore.Database\Api.Data.EfCore.Database.csproj", "{3E50238A-CA0B-4106-81F2-6AF8A62DFF8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Data.EfCore.Database", "data\Api.Data.EfCore.Database\Api.Data.EfCore.Database.csproj", "{3E50238A-CA0B-4106-81F2-6AF8A62DFF8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data.EfCore.Repository", "data\Api.Data.EfCore.Repository\Api.Data.EfCore.Repository.csproj", "{8A75490A-6323-453B-B58F-ABC57DC22161}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Data.EfCore.Repository", "data\Api.Data.EfCore.Repository\Api.Data.EfCore.Repository.csproj", "{8A75490A-6323-453B-B58F-ABC57DC22161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data.Access.DataTypes", "data\Api.Data.Access.DataTypes\Api.Data.Access.DataTypes.csproj", "{27F0D8CB-AB1E-40EA-A074-ED1ECB69F913}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Data.Access.DataTypes", "data\Api.Data.Access.DataTypes\Api.Data.Access.DataTypes.csproj", "{27F0D8CB-AB1E-40EA-A074-ED1ECB69F913}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data.Access.Interfaces", "data\Api.Data.Access.Interfaces\Api.Data.Access.Interfaces.csproj", "{D0E6ABF9-D6FB-464C-ACF0-2EF746D1B370}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Data.Access.Interfaces", "data\Api.Data.Access.Interfaces\Api.Data.Access.Interfaces.csproj", "{D0E6ABF9-D6FB-464C-ACF0-2EF746D1B370}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data.Access.Services", "data\Api.Data.Access.Services\Api.Data.Access.Services.csproj", "{1E892E6C-81C6-40C6-B995-2FA5842E7385}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Data.Access.Services", "data\Api.Data.Access.Services\Api.Data.Access.Services.csproj", "{1E892E6C-81C6-40C6-B995-2FA5842E7385}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8F119E0F-8716-4939-B12B-E62592C78D5B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
