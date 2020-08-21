@@ -1,7 +1,9 @@
-﻿using Api.Data.Access.Interfaces;
+﻿using Api.Base.DataTypes;
+using Api.Data.Access.Interfaces;
 using Api.Data.Access.Services;
 using Api.Data.Access.Services.Helpers;
 using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Api.Web.DataAccess.Extensions
@@ -16,6 +18,17 @@ namespace Api.Web.DataAccess.Extensions
             {
                 mapperConfig.AddProfile<DataAccessMapping>();
             });
+
+            return services;
+        }
+
+        internal static IServiceCollection AddConfigOptions(this IServiceCollection services, IConfiguration configuration)
+        {
+            var pageSettingsSection = configuration.GetSection("Page");
+            if (pageSettingsSection.Exists())
+            {
+                services.Configure<PageSettings>(pageSettingsSection);
+            }
 
             return services;
         }

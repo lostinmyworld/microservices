@@ -20,6 +20,7 @@ namespace Api.Web.DataAccess
         {
             services.AddDatabase(_configuration)
                 .AddServices()
+                .AddConfigOptions(_configuration)
                 .AddControllers();
         }
 
