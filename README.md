@@ -13,6 +13,7 @@ Implementing the web API with the following principles/patterns:
 * Logging (including requests/responses
 * Global exception handling
 * ProblemDetails guidelines for human readable errors https://tools.ietf.org/html/rfc7807
+* IOptions pattern to use appSettings.json configurations with DI
 
 Technologies used:
 * .NET Core 3.1
