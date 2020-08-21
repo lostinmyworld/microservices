@@ -4,7 +4,7 @@ using Api.Base.Web.Exceptions;
 using Api.Base.Web.Responses;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Base.Web
+namespace Api.Base.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
