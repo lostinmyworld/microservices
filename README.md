@@ -1,3 +1,22 @@
 # .NET Core web API
-Web microservices project with .NET Core 3.1 &amp; Entity Framework Code-First database.
-Implementing the web API with SOLID principles, Clean Code, Service Oriented Architecture, Async tasks, Bearer Token & JWT, Repository pattern, logging, global exception handling through middleware handling and custom exceptions that hold the HTTP response status, and more.
+Web API project using .NET Core and best practices approach.
+
+Implementing the web API with the following principles/patterns:
+* Microservices architecture
+* SOLID principles
+* Clean Code
+* SOA (Service Oriented Architecture)
+* Repository pattern
+* Dependency Injection & Inversion of Control
+* Async Tasks pattern
+* Logging (including requests/responses
+* Global exception handling
+* ProblemDetails guidelines for human readable errors https://tools.ietf.org/html/rfc7807
+
+Technologies used:
+* .NET Core 3.1
+* Entity Framework Core
+* Code-First MSSQL database
+* JWT (JSON Web Token) Bearer Token
+* Serilog logger
+
