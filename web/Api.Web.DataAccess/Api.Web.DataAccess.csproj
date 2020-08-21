@@ -18,7 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\data\Api.Data.Access.Interfaces\Api.Data.Access.Interfaces.csproj" />
+    <ProjectReference Include="..\..\data\Api.Data.Access.Services\Api.Data.Access.Services.csproj" />
     <ProjectReference Include="..\..\data\Api.Data.EfCore.Database\Api.Data.EfCore.Database.csproj" />
+    <ProjectReference Include="..\..\data\Api.Data.EfCore.Repository\Api.Data.EfCore.Repository.csproj" />
   </ItemGroup>
 
 

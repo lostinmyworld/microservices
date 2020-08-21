@@ -1,6 +1,7 @@
 ﻿using Api.Data.Access.DataTypes.DTOs;
 using Api.Data.Access.Interfaces;
 using Api.Data.EfCore.Repository;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,30 +10,40 @@ namespace Api.Data.Access.Services
     public class EmployeeService : IEmployeeService
     {
         private readonly EmployeeRepository _employeeRepo;
+        private readonly IMapper _mapper;
 
-        public EmployeeService(EmployeeRepository employeeRepo)
+        public EmployeeService(EmployeeRepository employeeRepo, IMapper mapper)
         {
             _employeeRepo = employeeRepo;
+            _mapper = mapper;
         }
 
         public List<EmployeeDTO> GetAll()
         {
-            throw new System.NotImplementedException();
+            var dbEntities = _employeeRepo.GetAll();
+
+            return _mapper.Map<List<EmployeeDTO>>(dbEntities);
         }
 
-        public Task<List<EmployeeDTO>> GetAllAsync()
+        public async Task<List<EmployeeDTO>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+            var dbEntities = await _employeeRepo.GetAllAsync().ConfigureAwait(false);
+
+            return _mapper.Map<List<EmployeeDTO>>(dbEntities);
         }
 
         public List<EmployeeDTO> GetByName(string name)
         {
-            throw new System.NotImplementedException();
+            var dbEntities = _employeeRepo.GetByName(name);
+
+            return _mapper.Map<List<EmployeeDTO>>(dbEntities);
         }
 
-        public Task<List<EmployeeDTO>> GetByNameAsync(string name)
+        public async Task<List<EmployeeDTO>> GetByNameAsync(string name)
         {
-            throw new System.NotImplementedException();
+            var dbEntities = await _employeeRepo.GetByNameAsync(name).ConfigureAwait(false);
+
+            return _mapper.Map<List<EmployeeDTO>>(dbEntities);
         }
     }
 }

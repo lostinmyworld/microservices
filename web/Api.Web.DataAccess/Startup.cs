@@ -9,17 +9,18 @@ namespace Api.Web.DataAccess
 {
     public class Startup
     {
+        private IConfiguration _configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        private IConfiguration _configuration { get; }
-
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDatabase(_configuration);
-            services.AddControllers();
+            services.AddDatabase(_configuration)
+                .AddServices()
+                .AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

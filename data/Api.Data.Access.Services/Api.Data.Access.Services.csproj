@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Api.Data.Access.Interfaces\Api.Data.Access.Interfaces.csproj" />
     <ProjectReference Include="..\Api.Data.EfCore.Repository\Api.Data.EfCore.Repository.csproj" />
   </ItemGroup>

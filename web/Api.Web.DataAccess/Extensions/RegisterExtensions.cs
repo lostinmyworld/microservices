@@ -1,22 +1,22 @@
-﻿using Api.Data.EfCore.Database;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Api.Data.Access.Interfaces;
+using Api.Data.Access.Services;
+using Api.Data.Access.Services.Helpers;
+using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Api.Web.DataAccess.Extensions
 {
     internal static class RegisterExtensions
     {
-        internal static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
+        internal static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddDbContextPool<EmployeeContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("EmployeeDb")));
+            services.AddScoped<IEmployeeService, EmployeeService>();
 
-            return services;
-        }
+            services.AddAutoMapper(mapperConfig =>
+            {
+                mapperConfig.AddProfile<DataAccessMapping>();
+            });
 
-        internal static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
-        {
             return services;
         }
     }
