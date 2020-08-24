@@ -48,6 +48,11 @@ namespace Api.Data.Access.Services
         {
             var dbEntity = await _employeeRepo.Get(id).ConfigureAwait(false);
 
+            if (dbEntity == default)
+            {
+                throw new EntityNotFoundException($"{nameof(EmployeeService)} {nameof(EmployeeDTO)} not found for ID: {id} .");
+            }
+
             return _mapper.Map<EmployeeDTO>(dbEntity);
         }
         #endregion
