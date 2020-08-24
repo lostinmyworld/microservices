@@ -3,7 +3,6 @@ using Api.Data.Access.DataTypes.DTOs;
 using Api.Data.Access.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 
 namespace Api.Web.DataAccess.Controllers
@@ -20,7 +19,7 @@ namespace Api.Web.DataAccess.Controllers
 
         #region Create
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody]EmployeeDTO entity)
+        public async Task<IActionResult> Add([FromBody] EmployeeDTO entity)
         {
             var result = await _service.Add(entity).ConfigureAwait(false);
 
@@ -55,10 +54,10 @@ namespace Api.Web.DataAccess.Controllers
         #endregion
 
         #region Update
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody]EmployeeDTO entity)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromRoute] long id, [FromBody] EmployeeDTO entity)
         {
-            var result = await _service.Update(entity).ConfigureAwait(false);
+            var result = await _service.Update(id, entity).ConfigureAwait(false);
 
             return RetrievePayload(result);
         }
@@ -66,7 +65,7 @@ namespace Api.Web.DataAccess.Controllers
 
         #region Delete
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute]long id)
+        public async Task<IActionResult> Delete([FromRoute] long id)
         {
             var result = await _service.Delete(id).ConfigureAwait(false);
 
