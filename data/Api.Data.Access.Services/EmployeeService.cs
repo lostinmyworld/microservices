@@ -53,7 +53,7 @@ namespace Api.Data.Access.Services
         #endregion
 
         #region Update
-        public async Task<bool> Update(long id, EmployeeDTO entity)
+        public async Task<bool> Update(EmployeeDTO entity)
         {
             if (entity == default)
             {
@@ -61,7 +61,7 @@ namespace Api.Data.Access.Services
             }
             var dbEntity = _mapper.Map<Employee>(entity);
 
-            return await _employeeRepo.Update(id, dbEntity).ConfigureAwait(false);
+            return await _employeeRepo.Update(dbEntity).ConfigureAwait(false);
         }
         #endregion
 
