@@ -23,6 +23,7 @@ namespace Api.Web.DataAccess
                 .AddServices()
                 .AddConfigOptions(_configuration)
                 .AddDocumentation()
+                .AddMvcForJsonXml()
                 .AddControllers();
         }
 
