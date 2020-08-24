@@ -19,7 +19,7 @@ namespace Api.RepositoryTests
 
         #region Get All Employees
         [Fact]
-        public async Task GetAllEmployees_Success_Test()
+        public async Task GetAll_Success_Test()
         {
             var result = await _repo.GetAll().ConfigureAwait(false);
 
@@ -30,7 +30,7 @@ namespace Api.RepositoryTests
 
         #region Get By Name
         [Fact]
-        public async Task GetEmployeeByName_Success_Test()
+        public async Task GetByName_Success_Test()
         {
             var name = "Παναγιώρης";
             var result = await _repo.GetByNameAsync(name).ConfigureAwait(false);
@@ -70,7 +70,7 @@ namespace Api.RepositoryTests
         }
 
         [Fact]
-        public async Task GetEmployeeByName_NotFound_Test()
+        public async Task GetByName_NotFound_Test()
         {
             string name = "γιώτη";
             var result = await _repo.GetByNameAsync(name).ConfigureAwait(false);
@@ -82,7 +82,7 @@ namespace Api.RepositoryTests
 
         #region Get By Id
         [Fact]
-        public async Task GetEmployeeById_Success_Test()
+        public async Task GetById_Success_Test()
         {
             var id = Context.Employees.First().Id;
             var result = await _repo.Get(id).ConfigureAwait(false);
@@ -91,7 +91,7 @@ namespace Api.RepositoryTests
         }
 
         [Fact]
-        public async Task GetEmployeeById_NotFound_Test()
+        public async Task GetById_NotFound_Test()
         {
             var id = Context.Employees.Last().Id + 100;
             var result = await _repo.Get(id).ConfigureAwait(false);
@@ -102,7 +102,7 @@ namespace Api.RepositoryTests
 
         #region Add
         [Fact]
-        public async Task AddEmployee_Success_Test()
+        public async Task Add_Success_Test()
         {
             var previousCount = Context.Employees.Count();
 
@@ -123,7 +123,7 @@ namespace Api.RepositoryTests
         }
 
         [Fact]
-        public async Task AddEmployee_Entity_Null_Test()
+        public async Task Add_Entity_Null_Test()
         {
             var previousCount = Context.Employees.Count();
 
@@ -135,7 +135,7 @@ namespace Api.RepositoryTests
 
         #region Generic Update
         [Fact]
-        public async Task GenericUpdateEmployee_Success_Test()
+        public async Task GenericUpdate_Success_Test()
         {
             var updatedName = "testtesttest";
 
@@ -149,7 +149,7 @@ namespace Api.RepositoryTests
         }
 
         [Fact]
-        public async Task GenericUpdateEmployee_Entity_Null_Test()
+        public async Task GenericUpdate_Entity_Null_Test()
         {
             Employee employee = null;
 
@@ -159,7 +159,7 @@ namespace Api.RepositoryTests
 
         #region Update
         [Fact]
-        public async Task UpdateEmployee_Success_Test()
+        public async Task Update_Success_Test()
         {
             var updatedName = "testtesttest";
 
@@ -174,7 +174,7 @@ namespace Api.RepositoryTests
         }
 
         [Fact]
-        public async Task UpdateEmployee_Entity_Null_Test()
+        public async Task Update_Entity_Null_Test()
         {
             var id = Context.Employees.Last().Id;
             Employee employee = null;
@@ -183,7 +183,7 @@ namespace Api.RepositoryTests
         }
 
         [Fact]
-        public async Task UpdateEmployee_Entity_NotFound_Test()
+        public async Task Update_Entity_NotFound_Test()
         {
             var employee = Context.Employees.Last();
             employee.FirstName = "testtesttest";
@@ -196,11 +196,11 @@ namespace Api.RepositoryTests
 
         #region Delete
         [Fact]
-        public async Task DeleteEmployee_Success_Test()
+        public async Task Delete_Success_Test()
         {
             var previousCount = Context.Employees.Count();
 
-            await AddEmployee_Success_Test().ConfigureAwait(false);
+            await Add_Success_Test().ConfigureAwait(false);
 
             Assert.Equal(previousCount + 1, Context.Employees.Count());
 
@@ -213,7 +213,7 @@ namespace Api.RepositoryTests
         }
 
         [Fact]
-        public async Task DeleteEmployee_NotFound_Test()
+        public async Task Delete_NotFound_Test()
         {
             var id = Context.Employees.Last().Id + 100;
 

@@ -23,6 +23,11 @@ namespace Api.Data.Access.Services
         #region Create
         public async Task<bool> Add(EmployeeDTO entity)
         {
+            if (entity == default)
+            {
+                throw new RequestParamNullException();
+            }
+
             var dbEntity = _mapper.Map<Employee>(entity);
 
             return await _employeeRepo.Add(dbEntity).ConfigureAwait(false);
