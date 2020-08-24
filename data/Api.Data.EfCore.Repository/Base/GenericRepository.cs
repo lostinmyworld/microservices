@@ -21,6 +21,10 @@ namespace Api.Data.EfCore.Repository.Base
         #region Create
         public async Task<bool> Add(T entity)
         {
+            if (entity == default)
+            {
+                throw new RequestParamNullException();
+            }
             Entities.Add(entity);
 
             return await SaveAsync().ConfigureAwait(false);

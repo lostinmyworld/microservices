@@ -15,13 +15,6 @@ namespace Api.Data.EfCore.Repository
         {
         }
 
-        public List<Employee> GetByName(string name)
-        {
-            return Context.Employees.AsNoTracking()
-                .Where(e => EF.Functions.Like(e.FirstName, $"%{name}%") || EF.Functions.Like(e.LastName, $"%{name}%"))
-                .ToList();
-        }
-
         public async Task<List<Employee>> GetByNameAsync(string name)
         {
             return await Context.Employees.AsNoTracking()
