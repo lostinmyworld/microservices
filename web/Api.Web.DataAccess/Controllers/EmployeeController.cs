@@ -55,10 +55,10 @@ namespace Api.Web.DataAccess.Controllers
         #endregion
 
         #region Update
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute]long id, [FromBody]EmployeeDTO entity)
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody]EmployeeDTO entity)
         {
-            var result = await _service.Update(id, entity).ConfigureAwait(false);
+            var result = await _service.Update(entity).ConfigureAwait(false);
 
             return RetrievePayload(result);
         }

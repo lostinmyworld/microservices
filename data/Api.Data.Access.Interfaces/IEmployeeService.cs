@@ -13,7 +13,7 @@ namespace Api.Data.Access.Interfaces
         Task<List<EmployeeDTO>> GetByName(string name);
         Task<EmployeeDTO> GetById(long id);
 
-        Task<bool> Update(long id, EmployeeDTO entity);
+        Task<bool> Update(EmployeeDTO entity);
 
         Task<bool> Delete(long id);
     }

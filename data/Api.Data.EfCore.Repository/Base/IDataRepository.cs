@@ -10,7 +10,7 @@ namespace Api.Data.EfCore.Repository.Base
         Task<List<T>> GetAll();
         Task<T> Get(long id);
 
-        Task<bool> Update(long id, T updatedEntity);
+        Task<bool> Update(T updatedEntity);
 
         Task<bool> Delete(long id);
     }

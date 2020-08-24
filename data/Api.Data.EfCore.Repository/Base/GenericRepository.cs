@@ -40,17 +40,11 @@ namespace Api.Data.EfCore.Repository.Base
         #endregion
 
         #region Update
-        public async Task<bool> Update(long id, T updatedEntity)
+        public async Task<bool> Update(T updatedEntity)
         {
             if (updatedEntity == default)
             {
                 throw new RequestParamNullException();
-            }
-
-            var dbEntity = await Get(id).ConfigureAwait(false);
-            if (dbEntity == default)
-            {
-                throw new EntityNotFoundException();
             }
 
             Entities.Update(updatedEntity);
