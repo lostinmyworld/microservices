@@ -1,5 +1,4 @@
 ﻿using Api.Data.Access.DataTypes.DTOs;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,7 +12,7 @@ namespace Api.Data.Access.Interfaces
         Task<List<EmployeeDTO>> GetByName(string name);
         Task<EmployeeDTO> GetById(long id);
 
-        Task<bool> Update(EmployeeDTO entity);
+        Task<bool> Update(long id, EmployeeDTO entity);
 
         Task<bool> Delete(long id);
     }

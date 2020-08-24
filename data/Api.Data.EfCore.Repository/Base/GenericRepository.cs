@@ -40,7 +40,7 @@ namespace Api.Data.EfCore.Repository.Base
         #endregion
 
         #region Update
-        public async Task<bool> Update(T updatedEntity)
+        public async Task<bool> GenericUpdate(T updatedEntity)
         {
             if (updatedEntity == default)
             {
