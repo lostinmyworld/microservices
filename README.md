@@ -7,7 +7,7 @@ Implementing the web API with the following principles/patterns:
 * SOLID principles
 * Clean Code
 * SOA (Service Oriented Architecture)
-* Repository pattern
+* Repository pattern & Generic repository pattern
 * Dependency Injection & Inversion of Control
 * Task Asynchronous Pattern
 * Logging (including requests/responses)
